@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Project 2 Report</title>
+        <style>
+            :root {
+                --color-neutral-95: hsl(220 10% 95%);
+                --color-neutral-90: hsl(220 10% 90%);
+                --color-neutral-80: hsl(220 10% 80%);
+                --color-neutral-70: hsl(220 10% 70%);
+                --color-neutral-60: hsl(220 10% 60%);
+                --color-neutral-50: hsl(220 10% 50%);
+                --color-neutral-40: hsl(220 10% 40%);
+                --color-neutral-30: hsl(220 10% 30%);
+                --color-neutral-20: hsl(220 10% 20%);
+                --color-neutral-10: hsl(220 10% 10%);
+            }
+
+            html {
+                font: 100%/1.5 system-ui;
+                counter-reset: figure;
+                background: var(--color-neutral-95);
+                max-width: min(75vw, 80em);
+                margin: 0 auto;
+            }
+
+            /* Headings */
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 1.1;
+                font-weight: 600;
+                text-wrap: balance;
+            }
+
+            h1,
+            h2 {
+                border-bottom: 1px solid var(--color-neutral-80);
+                padding-bottom: 0.2em;
+            }
+
+            h1 {
+                margin-block: 1em 0.5rem;
+                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+                font-weight: 800;
+
+                small {
+                    display: block;
+                    width: fit-content;
+                    padding: 0.2em 0.5em;
+                    margin-inline: auto;
+                    color: white;
+                    background: var(--color-neutral-40);
+                    font-size: 40%;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+
+            h2 {
+                font-size: 180%;
+                color: var(--color-neutral-30);
+            }
+
+            h3 {
+                font-size: 130%;
+            }
+
+            /* Lists */
+
+            ul,
+            ol {
+                padding-inline-start: 2em;
+            }
+
+            li {
+                &::marker {
+                    color: var(--color-neutral-40);
+                }
+
+                + li {
+                    margin-top: 0.2em;
+                }
+            }
+
+            /* Sectioning elements */
+
+            header {
+                padding-block: 1em;
+                text-align: center;
+            }
+
+            main {
+                background: white;
+                color: var(--color-neutral-20);
+                border-radius: 1rem;
+                padding: 0.1rem 2rem;
+            }
+
+            /* Figures */
+
+            figure {
+                margin: 1em 0;
+                padding: 0.5rem;
+                margin-inline: -0.5em;
+                border: 1px solid var(--color-neutral-80);
+                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+                text-align: center;
+                background: white;
+
+                > img {
+                    max-width: 100%;
+                    height: auto;
+                }
+
+                > figcaption {
+                    font: 500 75% var(--font-sans);
+                    background: var(--color-neutral-95);
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                    margin-top: 0.5rem;
+                    counter-increment: figure;
+                    text-align: left;
+
+                    &::before {
+                        content: "Figure " counter(figure) ": ";
+                        font-weight: bold;
+                        color: var(--color-neutral-40);
+                    }
+
+                    a:not(:hover, :focus, :active) {
+                        color: inherit;
+                        text-decoration: underline;
+                        text-decoration-color: color-mix(
+                            in lab,
+                            currentColor,
+                            transparent 70%
+                        );
+                    }
+                }
+            }
+
+            /* Design decision scores */
+
+            .score {
+                display: inline-block;
+                min-width: 3.2em;
+                padding: 0 0.4em;
+                margin-right: 0.3em;
+                border-radius: 0.3em;
+                background: var(--color-neutral-90);
+                color: var(--color-neutral-10);
+                font-weight: 700;
+                font-variant-numeric: tabular-nums;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                <small>Project 2</small>
+                Persuasive or Deceptive Visualization?
+            </h1>
+
+            <!-- TODO: fill in every group member's full name and UCSD email -->
+            <p><strong>[Full Name]</strong> — <em>ejl022@ucsd.edu</em></p>
+            <p><strong>[Full Name]</strong> — <em>[email]@ucsd.edu</em></p>
+            <p><strong>[Full Name]</strong> — <em>[email]@ucsd.edu</em></p>
+        </header>
+
+        <main>
+            <h2>Proposition: Countries are getting worse on emissions as they urbanize.</h2>
+
+            <p>
+                Both visualizations use the IMF/World Bank Climate Change Indicators dataset and measure
+                emissions the same way, as <strong>CO₂ per person</strong>, so the two sides can be compared
+                directly. Each design decision is scored from −2 (deceptive) to +2 (earnest).
+            </p>
+
+            <section>
+                <h3>FOR the Proposition</h3>
+
+                <figure>
+                    <img
+                        src="true2_asia_paths.png"
+                        alt="Connected scatter plot of urban population share against CO2 per person from 1990 to 2018 for China, South Korea, Malaysia, Indonesia, Vietnam and India. Every path moves up and to the right."
+                    />
+                    <figcaption>
+                        Six Asian economies traced year by year from 1990 to 2018. As each country's urban share
+                        rose, its CO₂ emissions per person rose with it. Data: World Bank, World Development
+                        Indicators.
+                    </figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>
+                        <span class="score">+1.5</span><strong>Connected scatter with urbanization on the x-axis.</strong>
+                        Putting urban share on the x-axis and drawing each country's yearly path ties the claim
+                        directly to urbanization rather than to time, so a reader sees "move right, go up." Both
+                        axes are labeled with units, the y-axis starts at zero, and the start (small dot) and end
+                        (large dot) years are stated in the subtitle. We considered a pair of time-series lines per
+                        country, but that forces the reader to correlate two charts in their head. Because this
+                        encoding is honest, we scored it as earnest. The one caveat is that a connected scatter
+                        implies causation more strongly than two separate lines would.
+                    </li>
+                    <li>
+                        <span class="score">−1.5</span><strong>Cherry-picked countries.</strong>
+                        We showed only six fast-urbanizing Asian economies whose emissions grew. Across the full
+                        dataset, 134 countries urbanized between 1990 and 2018, and 42 of them saw CO₂ per person
+                        <em>fall</em>. The within-country correlation between urban share and emissions is only
+                        about 0.17. The chart gives no hint that these six were selected, so the viewer assumes they
+                        are typical. We considered plotting all countries as a faint background, but that would
+                        reveal the many paths that move right and go down.
+                    </li>
+                    <li>
+                        <span class="score">−1</span><strong>Percent-change labels on small bases.</strong>
+                        Each endpoint is labeled with percent growth rather than tonnes added. Vietnam's "+897%"
+                        dominates the chart, yet it represents a rise from 0.27 to 2.7 tonnes. South Korea added
+                        about 6.4 tonnes per person and reads as only "+110%." Percentages make the poorest starting
+                        points look the most alarming. Labeling absolute change, for example "+2.4 t," would be the
+                        more earnest choice.
+                    </li>
+                    <li>
+                        <span class="score">−1</span><strong>A title that generalizes.</strong>
+                        "As Asia urbanized, emissions per person soared" turns six countries into "Asia," and
+                        "soared" is a strong verb chosen to match the steep slopes. Japan is also in Asia: it went
+                        from 77% to 92% urban while its emissions per person stayed flat (8.85 to 8.74 t), and it
+                        is left out. We kept the tone factual, with no "crisis" or "explosion," so the slant would
+                        not be obvious.
+                    </li>
+                    <li>
+                        <span class="score">+0.5</span><strong>Window starts in 1990.</strong>
+                        1990 is the standard climate-policy baseline (Kyoto, UNFCCC reporting), so the choice is
+                        defensible. It also happens to capture these
+                        economies just before their fastest industrial growth, which steepens every path.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>AGAINST the Proposition</h3>
+
+                <figure>
+                    <img
+                        src="false1_urban_decoupling.png"
+                        alt="Six small-multiple line charts for the UK, Denmark, Sweden, France, Germany and the US, each showing urban population share and CO2 per person indexed to 1990 = 100. Urban share rises slightly while CO2 per person falls 21 to 44 percent."
+                    />
+                    <figcaption>
+                        Urban population share and CO₂ emissions per person, both indexed to 1990 = 100, for six
+                        highly urban countries. In every panel, cities kept growing while emissions per person
+                        fell. Data: World Bank, World Development Indicators.
+                    </figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>
+                        <span class="score">+1.5</span><strong>Same metric as the other side, CO₂ per person.</strong>
+                        We used CO₂ per person in both charts so neither side wins by switching units. An earlier
+                        draft used carbon intensity (CO₂ per dollar of GDP), which falls almost everywhere and
+                        made the argument easier, but it answers a different question. Using total emissions would
+                        have penalized population growth instead of urbanization.
+                    </li>
+                    <li>
+                        <span class="score">−1</span><strong>Indexing both series to 1990 = 100 on a shared axis.</strong>
+                        Indexing makes two different units comparable and puts all six panels on one scale. That
+                        is legitimate, but these countries were already 73–85% urban in 1990, so their urban share
+                        can only grow a few percent. The blue line therefore looks flat next to the falling green
+                        line. Readers see "cities grew, emissions fell," when the urbanization being shown is
+                        minimal. Plotting raw urban share would make it clear how little room these countries had
+                        left to urbanize.
+                    </li>
+                    <li>
+                        <span class="score">−1.5</span><strong>Country selection.</strong>
+                        All six are wealthy Western countries that were already urban. In the full dataset, the
+                        countries that were more than 70% urban in 1990 are the only group whose median CO₂ per
+                        person fell. Countries that urbanized from a low base mostly rose. South Korea also started
+                        above 70% urban, but its emissions per person more than doubled, so it is left out. The
+                        countries doing the most urbanizing are the ones missing from this chart.
+                    </li>
+                    <li>
+                        <span class="score">−0.5</span><strong>1990 baseline and shaded gap.</strong>
+                        Germany's 1990 figure includes East German heavy industry that collapsed after
+                        reunification, so part of its −29% has nothing to do with cities. Denmark's 1990 value is
+                        also low compared with its mid-1990s peak, so we raised the axis limit to show the full
+                        spike instead of clipping it. The green fill between the lines draws the eye to the gap
+                        and makes the divergence feel larger than the endpoint labels alone would.
+                    </li>
+                    <li>
+                        <span class="score">+1</span><strong>Small multiples with direct labels.</strong>
+                        Six panels with shared axes avoid the spaghetti of overlaid lines, and the endpoint labels
+                        (+7% / −44%) let readers check our claim without reading values off the axis. One shared
+                        legend at the top and the dashed 100 reference line keep the design consistent. This is
+                        the most earnest part of the chart.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Final Reflection</h2>
+
+                <!-- TODO: rewrite in your own words; reflection should reflect your group's actual process -->
+                <p>
+                    We started with four candidate charts, two per side. Our first "for" chart overlaid world
+                    urbanization and total CO₂ on a dual axis, and our first "against" chart used carbon
+                    intensity. Feedback at the checkpoint pointed out that these charts overplotted, and that the
+                    two sides used different metrics, so comparing them was apples to oranges. A total-emissions
+                    chart mostly reflects population growth, and a per-dollar chart mostly reflects GDP growth.
+                    Switching both sides to CO₂ per person made the debate fairer, and it also made it harder to
+                    deceive, because we could no longer win by choosing a convenient unit.
+                </p>
+                <p>
+                    What surprised us was how little deception the final charts needed. Neither chart truncates an
+                    axis, and every number shown is correct. Most of the persuasive work comes from choosing
+                    <em>which countries</em> to show and <em>how to express change</em>. The "for" chart reports
+                    percentages that inflate small starting values. The "against" chart indexes urban share for
+                    countries that had almost no room left to urbanize. The same dataset supports both stories
+                    because the underlying relationship is mixed. Urbanization tracks higher emissions across
+                    countries, largely through income, but within a single country the link is weak.
+                </p>
+                <p>
+                    To us, an ethical visualization is one where a reader who knows what was left out would still
+                    agree with the main takeaway. Persuasion is acceptable when it decides emphasis: a title that
+                    states a conclusion, color that highlights the key series, or a metric that is defensible and
+                    disclosed. It becomes misleading when the design depends on the viewer <em>not</em> knowing
+                    something, such as that the countries were filtered to fit the story or that a percentage hides
+                    a tiny absolute change. Our rough test is whether the chart would survive adding back the data
+                    we removed. Neither of ours fully would, which is why both selection decisions scored
+                    −1.5.
+                </p>
+            </section>
+        </main>
+    </body>
+</html>
