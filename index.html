@@ -206,43 +206,31 @@
                 <ul>
                     <li>
                         <span class="score">+1.5</span><strong>Connected scatter with urbanization on the x-axis.</strong>
-                        Putting urban share on the x-axis and drawing each country's yearly path ties the claim
-                        directly to urbanization rather than to time, so a reader sees "move right, go up." Both
-                        axes are labeled with units, the y-axis starts at zero, and the start (small dot) and end
-                        (large dot) years are stated in the subtitle. We considered a pair of time-series lines per
-                        country, but that forces the reader to correlate two charts in their head. Because this
-                        encoding is honest, we scored it as earnest. The one caveat is that a connected scatter
-                        implies causation more strongly than two separate lines would.
+                        Each country's path ties emissions directly to urban share, so the reader sees "move right,
+                        go up." Axes are labeled with units and the y-axis starts at zero. Paired time-series
+                        charts were the alternative, but they make the reader compare two charts at once.
                     </li>
                     <li>
                         <span class="score">−1.5</span><strong>Cherry-picked countries.</strong>
-                        We showed only six fast-urbanizing Asian economies whose emissions grew. Across the full
-                        dataset, 134 countries urbanized between 1990 and 2018, and 42 of them saw CO₂ per person
-                        <em>fall</em>. The within-country correlation between urban share and emissions is only
-                        about 0.17. The chart gives no hint that these six were selected, so the viewer assumes they
-                        are typical. We considered plotting all countries as a faint background, but that would
-                        reveal the many paths that move right and go down.
+                        We show only six Asian urbanizers whose emissions grew, but 42 of the 134 countries that
+                        urbanized since 1990 saw CO₂ per person <em>fall</em>. Showing all countries in the
+                        background would have exposed those paths.
                     </li>
                     <li>
-                        <span class="score">−1</span><strong>Percent-change labels on small bases.</strong>
-                        Each endpoint is labeled with percent growth rather than tonnes added. Vietnam's "+897%"
-                        dominates the chart, yet it represents a rise from 0.27 to 2.7 tonnes. South Korea added
-                        about 6.4 tonnes per person and reads as only "+110%." Percentages make the poorest starting
-                        points look the most alarming. Labeling absolute change, for example "+2.4 t," would be the
-                        more earnest choice.
+                        <span class="score">−1</span><strong>Percent-change labels.</strong>
+                        Vietnam's "+897%" is only 0.27 → 2.7 t, while South Korea added 6.4 t but shows "+110%."
+                        Percentages make small starting values look alarming. Labeling tonnes added would be more
+                        honest.
                     </li>
                     <li>
                         <span class="score">−1</span><strong>A title that generalizes.</strong>
-                        "As Asia urbanized, emissions per person soared" turns six countries into "Asia," and
-                        "soared" is a strong verb chosen to match the steep slopes. Japan is also in Asia: it went
-                        from 77% to 92% urban while its emissions per person stayed flat (8.85 to 8.74 t), and it
-                        is left out. We kept the tone factual, with no "crisis" or "explosion," so the slant would
-                        not be obvious.
+                        "As Asia urbanized…" turns six countries into a continent and leaves out Japan, which went
+                        from 77% to 92% urban with flat emissions. "Soared" is strong but stays factual enough not
+                        to look biased.
                     </li>
                     <li>
                         <span class="score">+0.5</span><strong>Window starts in 1990.</strong>
-                        1990 is the standard climate-policy baseline (Kyoto, UNFCCC reporting), so the choice is
-                        defensible. It also happens to capture these
+                        1990 is the standard climate-policy baseline, so it is defensible. It also catches these
                         economies just before their fastest industrial growth, which steepens every path.
                     </li>
                 </ul>
@@ -267,43 +255,33 @@
 
                 <ul>
                     <li>
-                        <span class="score">+1.5</span><strong>Same metric as the other side, CO₂ per person.</strong>
-                        We used CO₂ per person in both charts so neither side wins by switching units. An earlier
-                        draft used carbon intensity (CO₂ per dollar of GDP), which falls almost everywhere and
-                        made the argument easier, but it answers a different question. Using total emissions would
-                        have penalized population growth instead of urbanization.
+                        <span class="score">+1.5</span><strong>Same metric as the other side.</strong>
+                        Both charts use CO₂ per person, so neither side wins by switching units. An earlier draft
+                        used CO₂ per dollar of GDP, which falls almost everywhere but answers a different question.
                     </li>
                     <li>
-                        <span class="score">−1</span><strong>Indexing both series to 1990 = 100 on a shared axis.</strong>
-                        Indexing makes two different units comparable and puts all six panels on one scale. That
-                        is legitimate, but these countries were already 73–85% urban in 1990, so their urban share
-                        can only grow a few percent. The blue line therefore looks flat next to the falling green
-                        line. Readers see "cities grew, emissions fell," when the urbanization being shown is
-                        minimal. Plotting raw urban share would make it clear how little room these countries had
-                        left to urbanize.
+                        <span class="score">−1</span><strong>Indexing both series to 1990 = 100.</strong>
+                        Indexing puts different units on one scale. But these countries were already 73–85% urban,
+                        so their urban line barely moves and the chart overstates how much they urbanized. Plotting
+                        raw urban share would show how little room they had left.
                     </li>
                     <li>
                         <span class="score">−1.5</span><strong>Country selection.</strong>
-                        All six are wealthy Western countries that were already urban. In the full dataset, the
-                        countries that were more than 70% urban in 1990 are the only group whose median CO₂ per
-                        person fell. Countries that urbanized from a low base mostly rose. South Korea also started
-                        above 70% urban, but its emissions per person more than doubled, so it is left out. The
-                        countries doing the most urbanizing are the ones missing from this chart.
+                        All six are wealthy, already-urban Western countries, the only group whose median emissions
+                        fell. South Korea was just as urban, but its emissions doubled, so it is left out, along
+                        with every country that urbanized from a low base.
                     </li>
                     <li>
                         <span class="score">−0.5</span><strong>1990 baseline and shaded gap.</strong>
-                        Germany's 1990 figure includes East German heavy industry that collapsed after
-                        reunification, so part of its −29% has nothing to do with cities. Denmark's 1990 value is
-                        also low compared with its mid-1990s peak, so we raised the axis limit to show the full
-                        spike instead of clipping it. The green fill between the lines draws the eye to the gap
-                        and makes the divergence feel larger than the endpoint labels alone would.
+                        Germany's 1990 value includes East German industry that collapsed after reunification,
+                        which inflates its drop. The green fill makes the gap between the lines feel larger than
+                        the labels alone would.
                     </li>
                     <li>
                         <span class="score">+1</span><strong>Small multiples with direct labels.</strong>
-                        Six panels with shared axes avoid the spaghetti of overlaid lines, and the endpoint labels
-                        (+7% / −44%) let readers check our claim without reading values off the axis. One shared
-                        legend at the top and the dashed 100 reference line keep the design consistent. This is
-                        the most earnest part of the chart.
+                        Shared axes avoid a tangle of overlapping lines, and the endpoint labels (+7% / −44%) let
+                        readers check the claim directly. A dashed 100 line and a single legend keep the panels
+                        consistent.
                     </li>
                 </ul>
             </section>
